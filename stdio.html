@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>mingw-w64中的&lt;stdio.h&gt;</title>
+    <style>
+        table
+        {
+            white-space: pre-line;
+        }
+        .table_title
+        {
+            text-align: center;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        h2
+        {
+            border-bottom: rgb(0,0,0) dashed 1px;
+        }
+    </style>
+</head>
+<body>
+<h1>stdio.h中的函数库说明</h1>
+<hr>
+<section about="functionInfo">
+    <table>
+        <tr>
+            <th>函数</th>
+            <th>说明</th>
+            <th>示例用法</th>
+            <th>其他事项</th>
+        </tr>
+        <tr>
+            <td colspan="4" class="table_title">标准输入输出</td>
+        </tr>
+        <tr>
+            <td>printf(const char * __restrict__ _Format,...)</td>
+            <td>输出字符串到标准输出上（控制台）
+                第一个参数为格式化字符串
+                第二个参数为格式化参数</td>
+            <td><code>printf("hello,world!%s,%d","hello",2);</code></td>
+            <td>暂无。要换行不要忘记"\n"，回车"\r"</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="table_title">字符数组（字符串）输入输出</td>
+        </tr>
+        <tr>
+            <td>sprintf(char * __restrict__ _Dest,const char * __restrict__ _Format,...)</td>
+            <td>向字符数组中输出格式化字符串。
+                第一个参数是目标数组,
+                第二个是格式化字符串，
+                第三个参数是填充格式化字符串中的参数。</td>
+            <td><code>第一步：声明一个char string[10];
+            第二步：sprintf(string,"hello,world!%s,%d","hello",2);</code></td>
+            <td>暂无</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="table_title">文件相关及输入输出</td>
+        </tr>
+        <tr>
+            <td>fprintf(FILE * __restrict__ _File,const char * __restrict__ _Format,...)</td>
+            <td>向文件中输出格式化字符。
+                第一个参数是文件指针,
+                第二个是格式化字符串，
+                第三个参数是填充格式化字符串中的参数。</td>
+            <td><code>第一步：File *file;
+                第二步：file = fopen("temp.txt","r+");
+                第三步：fprintf(file,"temp%d",1);
+                第四步：fclose(file);用以关闭文件</code></td>
+            <td>暂无</td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>
